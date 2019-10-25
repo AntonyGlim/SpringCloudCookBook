@@ -20,7 +20,8 @@
 		<module>dto-consumer</module>
 		<module>dto-common</module>
         <module>hystrix-client</module>
-    </modules>
+		<module>home-work</module>
+	</modules>
 
     <parent>
 		<groupId>org.springframework.boot</groupId>
