@@ -2,13 +2,11 @@ package glim.antony;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.config.server.EnableConfigServer;
-
 
 @SpringBootApplication
-//@EnableEurekaServer
-public class EurekaServerApplication {
+public class SpringProductMicroServiceApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaServerApplication.class, args);
+		SpringApplication.run(SpringProductMicroServiceApplication.class, args);
 	}
 }
+

@@ -1,7 +1,7 @@
 package glim.antony.services;
 
-import glim.antony.spring_led_market.entities.Product;
-import glim.antony.spring_led_market.repositories.ProductsRepository;
+import glim.antony.entities.Product;
+import glim.antony.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,10 +13,10 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    private ProductsRepository productsRepository;
+    private ProductRepository productsRepository;
 
     @Autowired
-    public void setProductsRepository(ProductsRepository productsRepository) {
+    public void setProductsRepository(ProductRepository productsRepository) {
         this.productsRepository = productsRepository;
     }
 

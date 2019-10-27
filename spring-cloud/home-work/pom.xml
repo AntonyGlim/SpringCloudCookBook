@@ -14,7 +14,7 @@
     <modules>
         <module>product-micro-service</module>
         <module>front-micro-service</module>
-        <module>eureka-micro-service</module>
+        <module>eureka-micro-server</module>
     </modules>
 
 

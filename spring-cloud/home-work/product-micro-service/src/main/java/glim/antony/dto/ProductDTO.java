@@ -11,7 +11,6 @@ import java.util.List;
 @NoArgsConstructor
 public class ProductDTO implements Serializable {
 
-
     private static final long serialVersionUID = -8258608012743322234L;
 
     private Long id;
@@ -19,8 +18,6 @@ public class ProductDTO implements Serializable {
     private String title;
 
     private BigDecimal price;
-
-    private List<ProductImage> images;
 
     public ProductDTO(Long id, String title, BigDecimal price) {
         this.id = id;
