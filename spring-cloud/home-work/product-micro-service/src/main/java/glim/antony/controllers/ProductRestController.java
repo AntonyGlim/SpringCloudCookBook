@@ -19,50 +19,16 @@ public class ProductRestController {
         this.productsService = productsService;
     }
 
-    @GetMapping("/") //http://localhost:8189/market/rest/v1/products/
+    @GetMapping("/") //http://localhost:9873/rest/v1/products/
     @ResponseStatus(HttpStatus.OK)
     public List<Product> showProducts(){
         return productsService.findAll();
     }
 
-    @GetMapping("/{id}") //http://localhost:8189/market/rest/v1/products/2
+    @GetMapping("/{id}") //http://localhost:9873/rest/v1/products/2
     @ResponseStatus(HttpStatus.OK)
     public Product showProductById(@PathVariable(name = "id") Long id){
         Product product = productsService.findById(id);
-//        if (product == null) //*throw new Exception("Product not found. (id = " + id + ")");*/
         return product;
     }
-
-    @PostMapping("/") //http://localhost:8189/market/rest/v1/products/
-    @ResponseStatus(HttpStatus.CREATED)
-    public Product addNewProduct(@RequestBody Product product){
-        product.setId(null); //защита
-        return productsService.save(product);
-    }
-
-    @PutMapping("/")
-    public Product updateProduct(@RequestBody Product product){
-//        if (product.getId() == null) throw new ...Exception("Product have no id"); //защита
-        return productsService.save(product);
-    }
-
-    @PutMapping("/{id}")
-    public Product saveOrUpdate(@RequestBody Product newProduct, @PathVariable Long id){
-        Product product = productsService.findById(id);
-        if (product != null){
-            product.setTitle(newProduct.getTitle());
-            product.setPrice(newProduct.getPrice());
-        } else {
-            product = newProduct;
-            product.setId(id);
-        }
-        return productsService.save(product);
-    }
-
-//    @DeleteMapping("/{id}")
-//    public void deleteProduct(@PathVariable Long id){
-//        productsService.deleteById(id);
-//    }
-
-
 }

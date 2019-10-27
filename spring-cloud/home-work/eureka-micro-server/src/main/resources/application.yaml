@@ -1,5 +1,5 @@
 server:
-  port: 8761
+  port: 8762
 
 eureka:
   client:
@@ -10,3 +10,8 @@ spring:
   cloud:
     config:
       uri: http://localhost:8081
+
+# spring.cloud.config.username=root
+# spring.cloud.config.password=s3cr3t
+# spring.cloud.config.name=conf
+# spring.cloud.config.uri=http://localhost:8081
