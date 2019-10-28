@@ -1,5 +1,6 @@
 package glim.antony.dto;
 
+import glim.antony.entities.Product;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,5 +24,11 @@ public class ProductDTO implements Serializable {
         this.id = id;
         this.title = title;
         this.price = price;
+    }
+
+    public ProductDTO(Product product) {
+        this.id = product.getId();
+        this.title = product.getTitle();
+        this.price = product.getPrice();
     }
 }

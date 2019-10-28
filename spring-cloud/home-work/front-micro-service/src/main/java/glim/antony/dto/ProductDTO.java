@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class ProductDTO implements Serializable {
 
-    private static final long serialVersionUID = -8258608012743322234L;
+    private static final long serialVersionUID = 3979872739783204794L;
 
     private Long id;
 

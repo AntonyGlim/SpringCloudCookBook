@@ -1,5 +1,6 @@
 package glim.antony;
 
+import glim.antony.dto.ProductDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
@@ -14,12 +15,11 @@ import java.util.List;
 public interface ProductRestClient {
 
     @RequestMapping("/rest/v1/products/")
-    String showProducts();
+    List<ProductDTO> showProducts();
 
     @RequestMapping("/rest/v1/products/{id}")
     String showProductById(@PathVariable(name = "id") Long id);
 
     @GetMapping("/rest/v1/products/hello")
-    @ResponseStatus(HttpStatus.OK)
     String hello();
 }

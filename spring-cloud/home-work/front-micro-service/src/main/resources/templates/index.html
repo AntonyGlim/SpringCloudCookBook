@@ -16,30 +16,22 @@
 
             <div th:text="${answer}"></div>
 
-            <!--<table class="table table-hover">-->
-                <!--<thead class="thead-dark">-->
-                <!--<tr>-->
-                    <!--<th>ID</th>-->
-                    <!--<th>Картинка</th>-->
-                    <!--<th>Название товара</th>-->
-                    <!--<th>Цена</th>-->
-                    <!--<th>Добавить в корзину</th>-->
-                <!--</tr>-->
-                <!--</thead>-->
-                <!--<tbody>-->
-                <!--<tr th:each="product : ${page.getContent()}">-->
-                    <!--<td th:text="${product.id}"/>-->
-                    <!--<td>-->
-                        <!--<img class="table_image" th:src="@{'/image_repository/products/' + ${product.id} + '/title.png'}">-->
-                    <!--</td>-->
-                    <!--<td th:text="${product.title}"/>-->
-                    <!--<td th:text="${product.price}"/>-->
-                    <!--<td>-->
-                        <!--<a type="button" class="btn btn-success" th:href="@{'/cart/add?id=' + ${product.id}}">add to cart</a>-->
-                    <!--</td>-->
-                <!--</tr>-->
-                <!--</tbody>-->
-            <!--</table>-->
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Название товара</th>
+                    <th>Цена</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="product : ${productDTOS}">
+                    <td th:text="${product.id}"/>
+                    <td th:text="${product.title}"/>
+                    <td th:text="${product.price}"/>
+                </tr>
+                </tbody>
+            </table>
 
         </div>
     </body>

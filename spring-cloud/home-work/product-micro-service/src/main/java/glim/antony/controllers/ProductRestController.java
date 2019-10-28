@@ -1,11 +1,13 @@
 package glim.antony.controllers;
 
+import glim.antony.dto.ProductDTO;
 import glim.antony.entities.Product;
 import glim.antony.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -21,8 +23,12 @@ public class ProductRestController {
 
     @GetMapping("/") //http://localhost:9873/rest/v1/products/
     @ResponseStatus(HttpStatus.OK)
-    public List<Product> showProducts(){
-        return productsService.findAll();
+    public List<ProductDTO> showProducts(){
+        List<ProductDTO> productDTOS = new ArrayList<>();
+        for (Product product : productsService.findAll()) {
+            productDTOS.add(new ProductDTO(product));
+        }
+        return productDTOS;
     }
 
     @GetMapping("/{id}") //http://localhost:9873/rest/v1/products/2
@@ -35,6 +41,6 @@ public class ProductRestController {
     @GetMapping("/hello") //http://localhost:9873/rest/v1/products/hello
     @ResponseStatus(HttpStatus.OK)
     public String hello(){
-        return "I close my ayes and see your fase!";
+        return "I close my ayes and see your face!";
     }
 }
