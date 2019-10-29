@@ -41,6 +41,6 @@ public class ProductRestController {
     @GetMapping("/hello") //http://localhost:9873/rest/v1/products/hello
     @ResponseStatus(HttpStatus.OK)
     public String hello(){
-        return "I close my ayes and see your face!";
+        return "I close my eyes and see your face!";
     }
 }
