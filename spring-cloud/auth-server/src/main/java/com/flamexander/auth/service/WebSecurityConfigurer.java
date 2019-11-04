@@ -23,29 +23,6 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
-//
-//    @Override
-//    @Bean
-//    public UserDetailsService userDetailsServiceBean() throws Exception {
-//        return super.userDetailsServiceBean();
-//    }
-//
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication()
-//                .withUser("alex")
-//                .password("{noop}123")
-//                .roles("USER")
-//                .and()
-//                .withUser("bob")
-//                .password("{noop}pass2")
-//                .roles("USER", "ADMIN");
-//    }
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(authenticationProvider());
-    }
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {

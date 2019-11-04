@@ -26,7 +26,7 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
                 .withClient("flametoken")
 //                .secret("{noop}thisissecret")
                 .secret("$2a$10$eCKuKJKLrKiZTVYtXUZdSe9i/h6qkFYF.AHs9WinoHGc3DOLi7aLm")
-                .authorizedGrantTypes("refresh_token", "password").scopes("webclient");
+                .authorizedGrantTypes("password").scopes("webclient");
     }
 
     @Override

@@ -27,6 +27,7 @@ public class SecuredController {
     }
 
     @GetMapping("/get_some_statistic")
+    // @PreAuthorize("#oauth2.hasScope('write')")
     public String getSomeStatistic() {
         ResponseEntity<CloudPacket> restExchange = restTemplate.exchange("http://localhost:9095/request/{statisticId}", HttpMethod.GET, null, CloudPacket.class, 1L);
         return restExchange.getBody().toString();

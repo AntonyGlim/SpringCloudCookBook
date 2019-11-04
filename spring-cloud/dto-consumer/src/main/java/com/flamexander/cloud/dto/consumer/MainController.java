@@ -14,8 +14,12 @@ import java.util.stream.Collectors;
 
 @Controller
 public class MainController {
+    private RestTemplate restTemplate;
+
     @Autowired
-    RestTemplate restTemplate;
+    public void setRestTemplate(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     @GetMapping
     public String showIndex(Model model) {
